@@ -42,7 +42,10 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
+![WhatsApp Image 2024-12-20 at 14 45 30_4308bc5e](https://github.com/user-attachments/assets/e1f11517-0269-4877-8a35-57bc395dd2b3)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![WhatsApp Image 2024-12-20 at 14 45 37_41cdb0d1](https://github.com/user-attachments/assets/ab0ac336-6515-439b-94b5-f9454792105b)
 
 **RESULTS**
+Thus the program to implement JK flipflop using verilog and validating their functionality using their functional tables has been verified successfully
