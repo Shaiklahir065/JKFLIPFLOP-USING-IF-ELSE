@@ -10,7 +10,21 @@ Quartus prime
 
 **THEORY**
 
-JK flip flop operates on sequential logic principle, where the output is dependent not only on the current inputs but also on the previous state.
+     module jkff(j,k,clk,q,qbar);
+     input j,k,clk;
+     output reg q,qbar;
+     initial 
+     begin
+     q=1'b0;
+     q=1'b1;
+     end 
+     
+     always @(posedge clk)
+     begin 
+     q<=(j&~q)|(~k&q);
+     qbar<=~q;
+     end
+     endmodule
 
 **JK Flip-Flop**
 
@@ -41,7 +55,9 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 **PROGRAM**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. 
-Developed by:shaik lahir 
+
+Developed by:shaik lahir
+
 RegisterNumber:24005737
 */
 
