@@ -10,6 +10,8 @@ Quartus prime
 
 **THEORY**
 
+JK flip flop operates on sequential logic principle, where the output is dependent not only on the current inputs but also on the previous state.
+
 **JK Flip-Flop**
 
 JK flip-flop is the modified version of SR flip-flop. It operates with only positive clock transitions or negative clock transitions. The circuit diagram of JK flip-flop is shown in the following figure.
