@@ -1,4 +1,5 @@
 # JKFLIPFLOP-USING-IF-ELSE
+**DATE:22/11/2024**
 
 **AIM:** 
 
@@ -10,15 +11,7 @@ Quartus prime
 
 **THEORY**
 
-1.Type the program in Quartus software.
-
-2.Compile and run the program.
-
-3.Generate the RTL schematic and save the logic diagram.
-
-4.Create nodes for inputs and outputs to generate the timing diagram.
-
-5.For different input combinations generate the timing diagram
+A JK Flip Flop is a type of digital memory circuit that stores a bit of information, with two inputs (J and K) and one output (Q). When J=0 and K=0, the flip flop remains in its current state; when J=1 and K=0, it sets to 1; when J=0 and K=1, it resets to 0; and when J=1 and K=1, it toggles its current state. This synchronous, edge-triggered, and sequential circuit is widely used in digital systems, counters, and registers, and its unique toggling feature makes it a fundamental building block of digital electronics.
 
 **JK Flip-Flop**
 
@@ -44,38 +37,50 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Type the program in Quartus software.
+
+2.Compile and run the program.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram.
 
 **PROGRAM**
 
-           module jkff(j,k,clk,q,qbar);
-           input j,k,clk;
-           output reg q,qbar;
-           initial 
-           begin
-           q=1'b0;
-           q=1'b1;
-           end 
-           
-           always @(posedge clk)
-           begin 
-           q<=(j&~q)|(~k&q);
-           qbar<=~q;
-           end
-           endmodule
- 
-Developed by:shaik lahir
+Program for flipflops and verify its truth table in quartus using Verilog programming. 
 
-RegisterNumber:24005737
+Developed by: SHAIK LAHIR
+
+RegisterNumber: 212224240148
+```
+module jk_ff(j, k, clk, rst, q);
+  input j, k, clk, rst;
+  output reg q;
+  always @(posedge clk or posedge rst) begin
+    if (rst)
+      q <= 0; // Reset the flip-flop
+    else if (j == 0 && k == 0)
+      q <= q; // No change
+    else if (j == 0 && k == 1)
+      q <= 0; // Reset
+    else if (j == 1 && k == 0)
+      q <= 1; // Set
+    else if (j == 1 && k == 1)
+      q <= ~q; // Toggle
+  end
+ endmodule
+```
+**RTL DIAGRAM**
+
+![image](https://github.com/user-attachments/assets/b67f66f3-fb04-4f5a-8513-b34734089310)
 
 
-**RTL LOGIC FOR FLIPFLOPS**
+**TIMING WAVEFORM**
 
-![image](https://github.com/user-attachments/assets/0b48c8f1-62bc-4135-a871-a519f8ebf8a2)
+![image](https://github.com/user-attachments/assets/c9e10526-ceae-41ab-81e8-b10b64f1c9db)
 
-**TIMING DIGRAMS FOR FLIP FLOPS**
+**RESULT**
 
-![image](https://github.com/user-attachments/assets/d9bc0ba0-c831-4d00-8af6-ff5692bf623f)
-
-**RESULTS**
-Thus the program to implement JK flipflop using verilog and validating their functionality using their functional tables has been verified successfully
+thus the implementation of JK flipflop using verilog and validating their functionality using their functional tables is verified.
